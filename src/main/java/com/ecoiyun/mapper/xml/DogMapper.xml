@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.xyy.mapper.DogMapper">
+	<select id="findAllDogs" resultType="com.xyy.domain.Dog">
+		SELECT * FROM dog;
+	</select>
+	<select id="findById" resultType="com.xyy.domain.Dog"
+		parameterType="int">
+		SELECT * FROM dog WHERE id=#{id};
+	</select>
+	<insert id="saveDog" parameterType="com.xyy.domain.Dog">
+		INSERT INTO dog(age,name) VALUES(#{age},#{name});
+	</insert>
+</mapper>
